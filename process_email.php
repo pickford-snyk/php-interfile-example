@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Prepare SQL query
     $sql = "INSERT INTO users (name, email) VALUES (?, ?)";
-    $stmt = $conn->prepare($sql);
+    $stmt = mysqli_query($conn, $query);
 
     // Bind parameters and execute query
     $stmt->bind_param("ss", $name, $processed_email);
